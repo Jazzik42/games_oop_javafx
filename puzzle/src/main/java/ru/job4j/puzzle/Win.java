@@ -4,7 +4,7 @@ public class Win {
     public static boolean check(int[][] board) {
         boolean rsl = false;
         for (int i = 0; i < board.length; i++) {
-            if (board[i][0] != 0 || board[0][i] != 0) {
+            if (board[i][i] != 0) {
                 if (gorizontal(board, i) || vertical(board, i)) {
                     rsl = true;
                     break;
@@ -17,7 +17,7 @@ public class Win {
     public static boolean gorizontal(int[][] board, int row) {
         boolean rslG = true;
         for (int j = 0; j < board.length; j++) {
-            if (board[row][0] == 0 || board[row][j] == 0) {
+            if (board[row][j] == 0) {
                 rslG = false;
                 break;
             }
@@ -29,7 +29,7 @@ public class Win {
     public static boolean vertical(int[][] board, int column) {
         boolean rslV = true;
         for (int i = 0; i < board.length; i++) {
-            if (board[0][column] == 0 || board[i][column] == 0) {
+            if (board[i][column] == 0) {
                     rslV = false;
                     break;
                 }
